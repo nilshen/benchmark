@@ -8,7 +8,7 @@ function App() {
   console.log(id)
 
   const handleClick = () => {
-    fetch('/id')
+    fetch(`http://localhost:5000/${id}`)
       .then(response => response.json()
       .then(data => ({ data, response })))
       .then(({ data, response }) =>  {
@@ -21,19 +21,21 @@ function App() {
   return (
     <div>
       <header>Welcome to the Benchmark Website, where you can check your percentile scores</header>
-        <form action = {`http://127.0.0.1:5000/search`} method = "GET">
+        {/* <form> */}
+        {/* <form action = {`http://127.0.0.1:5000/${id}`}> */}
           <div>Please enter your Candidate ID:   
             <input 
               type ="text"
-              name ="candidate_id" 
+              // name ="candidate_id" 
               placeholder="your candidate ID..."
               onChange={e => setId(e.target.value)}
               value={id}
               />
-              <input type = "submit" value = "submit" />
+              <input type = "submit" value = "submit" onClick={handleClick}/>
           </div>
 
-        </form>
+        {/* </form> */}
+
     </div>
   )
 }
