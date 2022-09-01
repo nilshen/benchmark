@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FiSearch } from "react-icons/fi";
-// import './index.css'
 
 function App() {
 
@@ -9,7 +8,7 @@ function App() {
   const [codingPercentile, setCodingPercentile] = useState('');
   const [overallPercentile, setOverallPercentile] = useState('');
 
-  console.log(id);
+  // console.log(id);
 
   const handleClick = () => {
     fetch(`/${id}`)
