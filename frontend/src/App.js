@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FiSearch } from "react-icons/fi"
+import { FiSearch } from "react-icons/fi" 
+import './index.css'
 
 function App() {
 
@@ -33,33 +34,40 @@ function App() {
   })}
     
     return (
-    <div className='page_container'>
-      <header>Welcome to the Benchmark Website, where you can check your percentile against programmers with the same title and from similar companies</header>
+    <div className='page-container'>
+      <div className='header'>
+        Welcome to the Benchmark, where you can check your percentile against programmers with the same title and from similar companies
+      </div>
       <br/>
-          <div>Please enter your Candidate ID:   
-            <input 
-              type ="text"
-              // name ="candidate_id" 
-              placeholder="your candidate ID..."
-              onChange={e => setId(e.target.value)}
-              value={id}
-              />
-              <input type = "submit" value = "submit" onClick={handleClick}/>
-          </div>
+      
+      <div className='body-container'>
+        <div className='input-title'>   
+          <input className='input'
+            type ="text"
+            // name ="candidate_id" 
+            placeholder="Please enter your candidate ID..."
+            onChange={e => setId(e.target.value)}
+            value={id}
+            />
+            <FiSearch onClick={handleClick} className="searchbar-icon"/>
+        </div>
 
         <br/>
-        <div>
-          Communication Score Percentile: 
-          <div id='com_percentile'>{comPercentile}</div>
+        <div className='percentiles-container'>
+          <div className='percentiles-row'>
+            <div className='percentiles-title'>Communication Percentile: </div> 
+            <div className='percentile-result' id='com_percentile'>{comPercentile}</div>
+          </div>
+          <div className='percentiles-row'>
+            <div className='percentiles-title'>Coding Percentile: </div> 
+            <div className='percentile-result' id='coding_percentile'>{codingPercentile}</div>
+          </div>
+          <div className='percentiles-row'>
+            <div className='percentiles-title'>Overall Percentile: </div> 
+            <div className='percentile-result' id='overall_percentile'>{overallPercentile}</div>
+          </div>
         </div>
-        <div>
-          Coding Score Percentile: 
-          <div id='coding_percentile'>{codingPercentile}</div>
-        </div>
-        <div>
-          Overall Score Percentile: 
-          <div id='coding_percentile'>{overallPercentile}</div>
-        </div>
+      </div>
     </div>
   )
 }
