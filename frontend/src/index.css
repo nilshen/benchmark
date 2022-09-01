@@ -16,7 +16,7 @@ code {
 
 .page-container {
   overflow: hidden;
-  margin-top: 5%;
+  margin-top: 8%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -29,19 +29,21 @@ code {
   flex-direction: row;
   
 
-  font-size: large;
+  font-size: x-large;
   font-weight:900
 }
 
 .body-container{
   position: fixed;
-  margin-top: 20%;
+  margin-top: 15%;
   margin-left: 40%;
+  width: 350px;
+  height: 100px;
   
   
 }
 
-.input-title{
+.search-container{
   /* margin: 10%; */
   display: flex;
   justify-content: start;
@@ -54,6 +56,8 @@ code {
   
   outline: none;
   
+  padding-left: 5px;
+  padding-bottom: 0px;
   font-size: large;
   border-radius: 4px 0 0 4px;
   border: 1px solid #CCCCCC;
@@ -85,13 +89,20 @@ code {
 }
 
 .percentiles-row{
+
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-.percentiles-title{
-
+#overall_percentile{
+  display: none;
+}
+#coding_percentile{
+  display: none;
+}
+#com_percentile{
+  display: none;
 }
 
 .percentile-result {
