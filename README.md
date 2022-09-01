@@ -1,37 +1,23 @@
-# Benchmark
+# Benchmark - Simple Fractal Coding Challenge
 
-# Objective
-We want to create an app for benchmarking an engineer's coding and communication skills against other engineers that work at similar companies and with the same title (e.g. Junior Engineer)
+First of all, I would like to thank you for the opportunity of working on this coding challenge as I learned so much including Python, Pandas, Flask, and adding React Charts. More importantly, I had better understanding how python + pandas can automate/optimize processes in various ways. I look forward to discussing more about this project with you and hearing your suggestion to improve my codes. 
 
-# Instructions
-1. Write a function that takes a candidate_id and returns their percentile for their coding and commmunication score compared to other candidates at the same title and at similar companies.
-2. Write a React app that allows a user to enter their candidate id and see their percentiles.
-3. Please add automated tests as you see fit.
-4. You must include a README with instructions to run your app.
+## how to run the app (through Mac)
 
-# Data
-- `score-records.csv` contains the coding and communication scores for all of the users in our sample dataset (https://s3.amazonaws.com/simple-fractal-recruiting/score-records.csv)
-- `companies.csv` contains the list of firms along with their `fractal_index` (https://s3.amazonaws.com/simple-fractal-recruiting/companies.csv)
+## In the flask-server folder, you can run:
+#### activate server: `source venv/bin/activate`
+#### install flask: `pip3 install Flask`
+#### run backend server `python3 server.py`
 
-# Definitions
-- communication_score: a measurement of the candidate's ability to communicate
-- coding_score: a measurement of the candidate's technical ability
-- title: the role that the candidate performs at their company, e.g. Senior Engineer
-- similar companies: A similar company is any company who's absolute difference of fractal_index is less than .15. A company is similar to itself.
+## In the frontend folder, you can run: 
+#### install packages: `npm install`
+#### react-scripts start: `npm start`
+#### If not auto directed, go to `http://localhost:3000/`
 
-# Formulas
-```python
-import math
-def are_similar(company_1, company_2):
-    return math.fabs(company_1["fractal_index"] - company_2["fractal_index"]) < 0.15
-```
+## Reference & Credit:
+#### Python Pandas: `https://www.youtube.com/watch?v=vmEHCJofslg&list=PL9ACKgr0PKS90IjMAbLRnG90Qf68gU6M1&index=5`
+#### Flask + React Project Setup: `https://www.youtube.com/watch?v=7LNl2JlZKHA`
+#### Python and Flask - Routing and Variable Rules `https://www.youtube.com/watch?v=f085KDOy43k`
+#### Flask + React API call: `https://www.youtube.com/watch?v=06pWsB_hoD4&t=351s`
+#### React Chart: `https://github.com/martyan/react-customizable-progressbar`
 
-# How Long Should This Take?
-Based on our experience, this should take less than 4 hours.
-
-
-
-# Reference & Credit:
-
-https://github.com/martyan/react-customizable-progressbar
-npm install --save react-customizable-progressbar
