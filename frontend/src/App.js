@@ -19,10 +19,10 @@ function App() {
         return response.json();
       })
       .then(data => {
-        setComPercentile(data['com_percentile']);
-        setCodingPercentile(data['coding_percentil']);
-        setOverallPercentile(data['overall_percentile']);
-        setId('');
+          setComPercentile(data['com_percentile']);
+          setCodingPercentile(data['coding_percentil']);
+          setOverallPercentile(data['overall_percentile']);
+          setId('');
 
         /// first try with data as array. Optimized with key pair data structure instead of index which is easier to read and reduce possible error/bugs
         // setComPercentile(data[0]);
@@ -42,7 +42,7 @@ function App() {
         // testing
         // console.log(data[0])
         // console.log(data[1])
-        console.log(data)
+        // console.log(data !== null)
       })
       .catch(console.error);
   };
@@ -68,8 +68,11 @@ function App() {
           />
           <FiSearch onClick={handleClick} className="searchbar-icon" />
         </div>
-
         <br />
+        <div id='error'>No candidate ID found, please try again...</div>
+        <br />
+
+        
         <div className='percentiles-container'>
 
           <div className='percentiles-row'>

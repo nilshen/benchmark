@@ -23,7 +23,6 @@ app = Flask(__name__)
 @app.route("/<int:id>")
 def percentiles(id):
     candidate = joined.query("candidate_id == @id")
-
     ###filtered the data with same candidate title and similar company fractal index range
     candidate_title = candidate["title"].values[0]
     candidate_fractal = candidate["fractal_index"].values[0]

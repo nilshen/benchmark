@@ -83,7 +83,7 @@ code {
 
 
 .percentiles-container {
-  margin-top: 5%;
+  /* margin-top: 5%; */
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -107,7 +107,7 @@ code {
   flex-direction: column;
 }
 #coding_percentile{
-  margin-left: 30%;
+  margin-left: 32%;
   margin-bottom: 5%;
   font-size: larger;
   font-weight: 700;
@@ -117,7 +117,7 @@ code {
   flex-direction: column;
 }
 #com_percentile{
-  margin-left: 25%;
+  margin-left: 23%;
   margin-bottom: 5%;
   font-size:larger;
   font-weight: 700;
@@ -143,3 +143,12 @@ code {
   margin: 0 auto;
   user-select: none;
 }
+
+#error{
+  display: none;
+  /* padding-top: 5%; */
+  color: rgb(185, 53, 53);
+  font-size: large;
+  font-weight: 500;
+}
+

@@ -31,5 +31,7 @@ Based on our experience, this should take less than 4 hours.
 
 
 
+# Reference & Credit:
 
+https://github.com/martyan/react-customizable-progressbar
 npm install --save react-customizable-progressbar
