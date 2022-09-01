@@ -1,6 +1,6 @@
 # Benchmark - Simple Fractal Coding Challenge
 
-First of all, I would like to thank you for the opportunity of working on this coding challenge as I learned so much including Python, Pandas, Flask, and adding React Charts. More importantly, I had better understanding how python + pandas can automate/optimize processes in various ways. I look forward to discussing more about this project with you and hearing your suggestion to improve my codes. 
+First of all, I would like to thank you for the opportunity of working on this coding challenge as I learned so much, including Python, Pandas, Flask, and adding React Charts. But, more importantly, I better understood how python + pandas can automate/optimize processes in various ways. I look forward to discussing this project more with you and hearing your suggestion to improve my codes.
 
 ## how to run the app (through Mac)
 
