@@ -9,28 +9,21 @@ function App() {
 
   const handleClick = () => {
     fetch(`/${id}`, {
-      // method : "GET",
-      // mode: 'no-cors',
     })
       .then(response => response.json()
       .then(data => ({ data, response })))
       .then(({ data, response }) =>  {
+        document.getElementById("com_percentile").innerHTML = data[0]
+        document.getElementById("coding_percentile").innerHTML = data[1]
+        
         console.log(data[0])
         console.log(data[1])
   })}
-  // useEffect(() => {
-    //   console.log('render')
-    // }, [])
-
-    // const 
-    // if (!data) return null;
-    // const data = data
     
     return (
     <div>
       <header>Welcome to the Benchmark Website, where you can check your percentile scores</header>
-        {/* <form> */}
-        {/* <form action = {`http://127.0.0.1:5000/${id}`}> */}
+      <br/>
           <div>Please enter your Candidate ID:   
             <input 
               type ="text"
@@ -42,10 +35,15 @@ function App() {
               <input type = "submit" value = "submit" onClick={handleClick}/>
           </div>
 
-        {/* </form> */}
-
-        {/* <div>Coding Score Percentile: {data[1]}</div>
-        <div>Communication Score Percentile: {data[0]}</div> */}
+        <br/>
+        <div>
+          Communication Score Percentile: 
+          <div id='com_percentile'></div>
+        </div>
+        <div>
+          Coding Score Percentile: 
+          <div id='coding_percentile'></div>
+        </div>
        
 
     </div>
