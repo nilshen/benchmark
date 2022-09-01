@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { FiSearch } from "react-icons/fi";
+import ProgressBar from 'react-customizable-progressbar'
 
 function App() {
 
   const [id, setId] = useState('');
-  const [comPercentile, setComPercentile] = useState('');
-  const [codingPercentile, setCodingPercentile] = useState('');
-  const [overallPercentile, setOverallPercentile] = useState('');
+  const [comPercentile, setComPercentile] = useState(0);
+  const [codingPercentile, setCodingPercentile] = useState(0);
+  const [overallPercentile, setOverallPercentile] = useState(0);
 
   // console.log(id);
 
@@ -18,14 +19,21 @@ function App() {
         return response.json();
       })
       .then(data => {
-        setComPercentile(data[0]);
-        setCodingPercentile(data[1]);
-        setOverallPercentile(data[2]);
+        setComPercentile(data['com_percentile']);
+        setCodingPercentile(data['coding_percentil']);
+        setOverallPercentile(data['overall_percentile']);
         setId('');
 
-        document.getElementById("com_percentile").style.display = 'block';
-        document.getElementById("coding_percentile").style.display = 'block';
-        document.getElementById("overall_percentile").style.display = 'block';
+        /// first try with data as array. Optimized with key pair data structure instead of index which is easier to read and reduce possible error/bugs
+        // setComPercentile(data[0]);
+        // setCodingPercentile(data[1]);
+        // setOverallPercentile(data[2]);
+        // setId('');
+
+        /// no need after adding the chart
+        // document.getElementById("com_percentile").style.display = 'block';
+        // document.getElementById("coding_percentile").style.display = 'block';
+        // document.getElementById("overall_percentile").style.display = 'block';
 
         /// inital try - set additional state instead of updating the innerHTML tags
         // document.getElementById("com_percentile").innerHTML = data[0]
@@ -34,10 +42,12 @@ function App() {
         // testing
         // console.log(data[0])
         // console.log(data[1])
-        // console.log(data)
+        console.log(data)
       })
       .catch(console.error);
   };
+
+
 
   return (
     <div className='page-container'>
@@ -54,6 +64,7 @@ function App() {
             placeholder="Please enter your candidate ID..."
             onChange={e => setId(e.target.value)}
             value={id}
+            onKeyDown={e => e.key === 'Enter' && handleClick()}
           />
           <FiSearch onClick={handleClick} className="searchbar-icon" />
         </div>
@@ -62,18 +73,78 @@ function App() {
         <div className='percentiles-container'>
 
           <div className='percentiles-row'>
-            <div id='com_percentile'>Communication Percentile: </div>
-            <div className='percentile-result'>{comPercentile}</div>
+            <div id='com_percentile'>Communication Percentile</div>
+            <div className='percentile-result'>
+
+            <ProgressBar
+            radius={100}
+            progress={parseInt(comPercentile)}
+            initialAnimation
+            initialAnimationDelay={500}
+            strokeWidth={18}
+            strokeColor="#5d9cec"
+            trackStrokeWidth={18}
+            pointerRadius={8}
+            pointerStrokeWidth={10}
+            pointerStrokeColor="#5c75cd"
+          >
+            <div className="indicator">
+                <div>{comPercentile}</div>
+            </div>
+            </ProgressBar>  
+            </div>
+          </div>
+      
+          <div className='percentiles-row'>
+            <div id='coding_percentile'>Coding Percentile</div>
+            <div className='percentile-result'>
+              
+            <ProgressBar
+            radius={100}
+            progress={parseInt(codingPercentile)}
+            initialAnimation
+            initialAnimationDelay={500}
+            strokeWidth={18}
+            strokeColor="#5d9cec"
+            trackStrokeWidth={18}
+            pointerRadius={8}
+            pointerStrokeWidth={10}
+            pointerStrokeColor="#5c75cd"
+          >
+            <div className="indicator">
+                <div>{codingPercentile}</div>
+            </div>
+            </ProgressBar> 
+              
+              </div>
           </div>
           <div className='percentiles-row'>
-            <div id='coding_percentile'>Coding Percentile: </div>
-            <div className='percentile-result'>{codingPercentile}</div>
+            <div id='overall_percentile'>Overall Percentile</div>
+            <div className='percentile-result'>
+              
+            <ProgressBar
+            radius={100}
+            progress={parseInt(overallPercentile)}
+            initialAnimation
+            initialAnimationDelay={500}
+            strokeWidth={18}
+            strokeColor="#5d9cec"
+            trackStrokeWidth={18}
+            pointerRadius={8}
+            pointerStrokeWidth={10}
+            pointerStrokeColor="#5c75cd"
+          >
+            <div className="indicator">
+                <div>{overallPercentile}</div>
+            </div>
+            </ProgressBar> 
+              
+            </div>
           </div>
-          <div className='percentiles-row'>
-            <div id='overall_percentile'>Overall Percentile: </div>
-            <div className='percentile-result'>{overallPercentile}</div>
-          </div>
+
+          
         </div>
+
       </div>
     </div>
   );

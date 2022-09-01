@@ -28,3 +28,8 @@ def are_similar(company_1, company_2):
 
 # How Long Should This Take?
 Based on our experience, this should take less than 4 hours.
+
+
+
+
+npm install --save react-customizable-progressbar

@@ -14,7 +14,7 @@ joined = pd.merge(score, company[["company_id","fractal_index"]], on="company_id
 ### You will be surprised that overall percentile can be higher than both. refer to 914 for example.
 joined["overall"] = joined["communication_score"] + joined["coding_score"]
 
-### first try with local download. Ultimized with loading directly from aws to reduce server load (refer to above).
+### first try with local download. Optimized with loading directly from aws to reduce server load (refer to above).
 # score = 'score-records.csv'
 # company = 'companies.csv'
 
@@ -74,8 +74,10 @@ def percentiles(id):
     # print(com_filtered)
     # print(coding_filtered)
     # print(overall_filtered)
-
-    return [com_percentile+"%", coding_percentile+"%", overall_percentile+"%"]
+    
+    ### initial try with array output, optimized with key pair data structure for better data quality
+    # return [com_percentile+"%", coding_percentile+"%", overall_percentile+"%"]
+    return {'com_percentile':com_percentile+"%", 'coding_percentil': coding_percentile+"%", 'overall_percentile':overall_percentile+"%"}
 
 
 if __name__ == "__main__":
