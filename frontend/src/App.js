@@ -8,17 +8,25 @@ function App() {
   console.log(id)
 
   const handleClick = () => {
-    fetch(`http://localhost:5000/${id}`)
+    fetch(`/${id}`, {
+      // method : "GET",
+      // mode: 'no-cors',
+    })
       .then(response => response.json()
       .then(data => ({ data, response })))
       .then(({ data, response }) =>  {
-        console.log(data)
+        console.log(data[0])
+        console.log(data[1])
   })}
-  
   // useEffect(() => {
-  //   console.log('render')
-  // }, [])
-  return (
+    //   console.log('render')
+    // }, [])
+
+    // const 
+    // if (!data) return null;
+    // const data = data
+    
+    return (
     <div>
       <header>Welcome to the Benchmark Website, where you can check your percentile scores</header>
         {/* <form> */}
@@ -35,6 +43,10 @@ function App() {
           </div>
 
         {/* </form> */}
+
+        {/* <div>Coding Score Percentile: {data[1]}</div>
+        <div>Communication Score Percentile: {data[0]}</div> */}
+       
 
     </div>
   )
