@@ -5,6 +5,8 @@ First of all, I would like to thank you for the opportunity of working on this c
 ## how to run the app (through Mac)
 
 ## In the flask-server folder, you can run:
+* install pandas: `pip3 install pandas`
+* install requests: `pip3 install requests`
 * activate server: `source venv/bin/activate`
 * install flask: `pip3 install Flask`
 * run backend server `python3 server.py`

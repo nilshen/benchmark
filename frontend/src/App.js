@@ -14,8 +14,6 @@ function App() {
   const handleClick = () => {
     fetch(`/${id}`)
       .then(response => {
-        // testing
-        // console.log(typeof response)
         return response.json();
       })
       .then(data => {
@@ -39,10 +37,6 @@ function App() {
         // document.getElementById("com_percentile").innerHTML = data[0]
         // document.getElementById("coding_percentile").innerHTML = data[1]
 
-        // testing
-        // console.log(data[0])
-        // console.log(data[1])
-        // console.log(data !== null)
       })
       .catch(console.error);
   };
@@ -155,25 +149,6 @@ function App() {
 
 export default App;
 
-
-
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-// import HomePage from './components/home_page/home_page'
-// import Percentiles from './components/percentiles/Percentiles'
-
-// const App = () => (
-
-//   <div className='full-page'>
-//     <Router>
-//       <Routes>
-//         <Route exact path='/' element={<HomePage/>} />
-//         <Route exact path='/percentiles' element={<Percentiles/>} />
-//       </Routes>
-//     </Router>
-//   </div>
-// )
-
-// export default App;
 
 
 
