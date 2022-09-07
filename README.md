@@ -34,7 +34,22 @@ First of all, I would like to thank you for the opportunity of working on this c
 *  Error handling
 *  auto testing/debugging
 
-## Percentile Formula
+## Percentile Formula (formula used here and through scipy library)
+Percentile = n/N * 100% 
+n = numbers of relevant scores less than or equal to candidate
+N = total numbers of relevant scores 
+
+For example, there are 11 scores: 
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+Percentile[1] = 1 / 11 * 100% = 9.1%
+
+Percentile[6] = 6 / 11 * 100% = 54.5%
+
+Percentile[11] = 11 / 11 * 100% = 100%
+
+## Percentile Formula (alternative way of calculation, not available through scipy library)
 Percentile = n/(N-1) * 100% 
 n = numbers of relevant scores less than candidate
 N = total numbers of relevant scores
@@ -48,4 +63,3 @@ Percentile[1] = 0 / (11 -1) * 100% = 0%
 Percentile[6] = 5 / (11 - 1) * 100% = 50%
 
 Percentile[11] = 10 / (11 - 1) * 100% = 100%
-
