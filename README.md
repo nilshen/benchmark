@@ -7,6 +7,7 @@ First of all, I would like to thank you for the opportunity of working on this c
 ## In the flask-server folder, you can run:
 * install pandas: `pip3 install pandas`
 * install requests: `pip3 install requests`
+* install scipy: `pip3 install scipy`
 * activate server: `source venv/bin/activate`
 * install flask: `pip3 install Flask`
 * run backend server `python3 server.py`

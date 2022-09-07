@@ -3,6 +3,9 @@ import pandas as pd
 import requests
 from io import StringIO
 
+from scipy import stats
+# percentile = stats.percentileofscore(arr, x)
+
 ###combine two source files into one joined
 score = requests.get('https://s3.amazonaws.com/simple-fractal-recruiting/score-records.csv')
 company = requests.get('https://s3.amazonaws.com/simple-fractal-recruiting/companies.csv')
@@ -32,8 +35,10 @@ def percentiles(id):
     com_filtered = filtered.sort_values(by=["communication_score"], ascending = 1)
     com_total = len(com_filtered["candidate_id"]) - 1 #needs to minus 1 total length excluding self.
     com_less_than = list(com_filtered["candidate_id"].values).index(id)
+    print(com_filtered)
 
     com_percentile = str(round(float(com_less_than / com_total * 100), 1))
+    # com_percentile = stats.percentileofscore(com_filtered['com_filtered'], com_filtered['candidate_id'], kind='strict')
 
     coding_filtered = filtered.sort_values(by=["coding_score"], ascending = 1)
     coding_total = len(coding_filtered["candidate_id"]) - 1 #needs to minus 1  total length excluding self.
