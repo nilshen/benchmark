@@ -9,8 +9,6 @@ function App() {
   const [codingPercentile, setCodingPercentile] = useState(0);
   const [overallPercentile, setOverallPercentile] = useState(0);
 
-  // console.log(id);
-
   const handleClick = () => {
     fetch(`/${id}`)
       .then(response => {
